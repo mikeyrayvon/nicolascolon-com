@@ -62,7 +62,8 @@ img
   li
     -webkit-column-break-inside: avoid
     page-break-inside: avoid
-    break-inside: avoid
+    break-inside: avoid-column
+    display: table
 
 // ******************************************************
 
@@ -99,8 +100,8 @@ font-sizes($font-size-basic, false, $font-size-large)
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
 
-  $font-size-basic = 21px
-  $font-size-large = 32px
+  $font-size-basic = 18px
+  $font-size-large = 28px
 
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 

@@ -624,25 +624,25 @@ template {
   src: local("Freight"), url("fonts/Freight-TextBook.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBook.woff2") format("woff2"), url("fonts/Freight-TextBook.woff") format("woff"), url("fonts/Freight-TextBook.ttf") format("truetype"), url("fonts/Freight-TextBook.svg#Freight") format("svg");
 }
 @font-face {
-  font-family: 'Freight';
+  font-family: 'Freight-Italic';
   font-weight: normal;
   font-style: italic;
   src: url("fonts/Freight-TextBookItalic.eot");
-  src: local("Freight"), url("fonts/Freight-TextBookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBookItalic.woff2") format("woff2"), url("fonts/Freight-TextBookItalic.woff") format("woff"), url("fonts/Freight-TextBookItalic.ttf") format("truetype"), url("fonts/Freight-TextBookItalic.svg#Freight") format("svg");
+  src: local("Freight-Italic"), url("fonts/Freight-TextBookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBookItalic.woff2") format("woff2"), url("fonts/Freight-TextBookItalic.woff") format("woff"), url("fonts/Freight-TextBookItalic.ttf") format("truetype"), url("fonts/Freight-TextBookItalic.svg#Freight-Italic") format("svg");
 }
 @font-face {
-  font-family: 'Freight';
+  font-family: 'Freight-Bold';
   font-weight: bold;
   font-style: normal;
-  src: url("fonts/Freight-TextBook.eot");
-  src: local("Freight"), url("fonts/Freight-TextBook.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBook.woff2") format("woff2"), url("fonts/Freight-TextBook.woff") format("woff"), url("fonts/Freight-TextBook.ttf") format("truetype"), url("fonts/Freight-TextBook.svg#Freight") format("svg");
+  src: url("fonts/Freight-TextBold.eot");
+  src: local("Freight-Bold"), url("fonts/Freight-TextBold.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBold.woff2") format("woff2"), url("fonts/Freight-TextBold.woff") format("woff"), url("fonts/Freight-TextBold.ttf") format("truetype"), url("fonts/Freight-TextBold.svg#Freight-Bold") format("svg");
 }
 @font-face {
-  font-family: 'Freight';
+  font-family: 'Freight-BoldItalic';
   font-weight: bold;
   font-style: italic;
-  src: url("fonts/Freight-TextBookItalic.eot");
-  src: local("Freight"), url("fonts/Freight-TextBookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBookItalic.woff2") format("woff2"), url("fonts/Freight-TextBookItalic.woff") format("woff"), url("fonts/Freight-TextBookItalic.ttf") format("truetype"), url("fonts/Freight-TextBookItalic.svg#Freight") format("svg");
+  src: url("fonts/Freight-TextBoldItalic.eot");
+  src: local("Freight-BoldItalic"), url("fonts/Freight-TextBoldItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBoldItalic.woff2") format("woff2"), url("fonts/Freight-TextBoldItalic.woff") format("woff"), url("fonts/Freight-TextBoldItalic.ttf") format("truetype"), url("fonts/Freight-TextBoldItalic.svg#Freight-BoldItalic") format("svg");
 }
 @font-face {
   font-family: 'fontello';
@@ -752,10 +752,16 @@ p {
 em,
 .font-italic {
   font-style: italic;
+  font-family: 'Freight-Italic', Georgia, Times, "Times New Roman", serif;
 }
 strong,
 .font-bold {
   font-weight: bold;
+  font-family: 'Freight-Bold', Georgia, Times, "Times New Roman", serif;
+}
+em strong,
+strong em {
+  font-family: 'Freight-BoldItalic', Georgia, Times, "Times New Roman", serif;
 }
 .font-small-caps {
   text-transform: uppercase;
@@ -808,7 +814,8 @@ img {
 #exhibition-list li {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
-  break-inside: avoid;
+  break-inside: avoid-column;
+  display: table;
 }
 .container {
   width: 96%;
@@ -1336,10 +1343,10 @@ html,
   }
   html,
   .font-size-basic {
-    font-size: 21px;
+    font-size: 18px;
   }
   .font-size-large {
-    font-size: 32px;
+    font-size: 28px;
   }
   .mobile-only {
     display: none !important;
