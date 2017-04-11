@@ -33,7 +33,7 @@ if ( $query->have_posts() ) {
       $current_year = $year;
 ?>
           <li class="margin-bottom-basic">
-            <div class="margin-bottom-small"><?php echo $year; ?></div>
+            <div class="margin-bottom-small font-sans"><?php echo $year; ?></div>
 <?php
     }
 ?>
