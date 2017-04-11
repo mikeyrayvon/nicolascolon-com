@@ -8,7 +8,7 @@
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": "Organization",
+    "@type": "Person",
     "url": "<?php echo site_url(); ?>",
     <?php
       if ($logo) {
