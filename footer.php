@@ -1,4 +1,4 @@
-  <footer id="footer">
+  <footer id="footer" class="padding-top-basic">
   </footer>
 
 </section>
