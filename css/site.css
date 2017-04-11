@@ -1042,16 +1042,10 @@ img {
 }
 html,
 .font-size-basic {
-  font-size: 12px;
-}
-.font-size-extra {
-  font-size: 28px;
+  font-size: 16px;
 }
 .font-size-large {
-  font-size: 21px;
-}
-.font-size-mid {
-  font-size: 16px;
+  font-size: 24px;
 }
 @media screen and (min-width: 720px) {
   .margin-top-micro {
@@ -1312,6 +1306,13 @@ html,
   .grid-column > .item-m-12 {
     max-height: 100%;
   }
+  html,
+  .font-size-basic {
+    font-size: 21px;
+  }
+  .font-size-large {
+    font-size: 32px;
+  }
   .mobile-only {
     display: none !important;
   }
@@ -1319,17 +1320,17 @@ html,
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-gap: 42px;
-    -moz-column-gap: 42px;
-    column-gap: 42px;
+    -webkit-column-gap: 21px;
+    -moz-column-gap: 21px;
+    column-gap: 21px;
   }
   #exhibition-content {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-gap: 42px;
-    -moz-column-gap: 42px;
-    column-gap: 42px;
+    -webkit-column-gap: 21px;
+    -moz-column-gap: 21px;
+    column-gap: 21px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1591,6 +1592,13 @@ html,
   .padding-bottom-large {
     padding-bottom: 120px;
   }
+  html,
+  .font-size-basic {
+    font-size: 24px;
+  }
+  .font-size-large {
+    font-size: 36px;
+  }
   .desktop-only {
     display: initial !important;
   }
@@ -1598,17 +1606,17 @@ html,
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
-    -webkit-column-gap: 48px;
-    -moz-column-gap: 48px;
-    column-gap: 48px;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
   #exhibition-content {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-gap: 48px;
-    -moz-column-gap: 48px;
-    column-gap: 48px;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1618,16 +1626,6 @@ html,
 }
 @media screen and (min-width: 1366px) {
   .container {
-    width: 1300px;
-  }
-}
-@media screen and (min-width: 1680px) {
-  .container {
-    width: 1600px;
-  }
-}
-@media screen and (min-width: 1920px) {
-  .container {
-    width: 1800px;
+    width: 1280px;
   }
 }
