@@ -8,33 +8,52 @@ get_header();
       <div class="grid-row">
 
 <?php
-if( have_posts() ) {
-  while( have_posts() ) {
-    the_post();
+// WP_Query arguments
+$args = array(
+	'post_type' => array( 'exhibition' ),
+	'posts_per_page' => '-1',
+  'orderby' => 'meta_value',
+  'meta_key' => '_igv_date_open',
+);
+
+// The Query
+$query = new WP_Query( $args );
+
+// The Loop
+if ( $query->have_posts() ) {
+  $current_year = 0;
+
 ?>
+        <div class="grid-item item-s-12 item-m-9">
+<?php
+	while ( $query->have_posts() ) {
+		$query->the_post();
 
-        <article <?php post_class('grid-item item-s-12'); ?> id="post-<?php the_ID(); ?>">
+    $open = get_post_meta($post->ID, '_igv_date_open', true);
+    $year = date('Y', $open);
 
-          <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-
-          <?php the_content(); ?>
-
-        </article>
-
+    if ($year !== $current_year) {
+      $current_year = $year;
+      echo '<div class="margin-bottom-small">' . $current_year . '</div>';
+    }
+?>
+          <h2 <?php post_class('margin-bottom-small font-size-large'); ?> id="post-<?php the_ID(); ?>">
+            <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+          </h2>
 <?php
   }
-} else {
 ?>
-        <article class="u-alert grid-item item-s-12"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
+      </div>
 <?php
-} ?>
-      
+}
+
+// Restore original Post Data
+wp_reset_postdata();
+?>
+
       </div>
     </div>
   </section>
-
-  <?php get_template_part('partials/pagination'); ?>
-
 </main>
 
 <?php
