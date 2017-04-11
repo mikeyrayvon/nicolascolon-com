@@ -8,7 +8,6 @@ get_header();
       <div class="grid-row">
 
 <?php
-// WP_Query arguments
 $args = array(
 	'post_type' => array( 'exhibition' ),
 	'posts_per_page' => '-1',
@@ -16,15 +15,13 @@ $args = array(
   'meta_key' => '_igv_date_open',
 );
 
-// The Query
 $query = new WP_Query( $args );
 
-// The Loop
 if ( $query->have_posts() ) {
   $current_year = 0;
 
 ?>
-        <ul id="exhibition-list" class="grid-item item-s-12 item-m-9">
+        <ul id="exhibition-list" class="grid-item item-s-12 item-m-9 margin-bottom-basic">
 <?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
@@ -35,7 +32,7 @@ if ( $query->have_posts() ) {
     if ($year !== $current_year) {
       $current_year = $year;
 ?>
-          <li>
+          <li class="margin-bottom-basic">
             <div class="margin-bottom-small"><?php echo $year; ?></div>
 <?php
     }
@@ -50,13 +47,31 @@ if ( $query->have_posts() ) {
 <?php
 }
 
-// Restore original Post Data
 wp_reset_postdata();
-?>
 
+$args = array(
+	'post_type' => array( 'page' ),
+	'posts_per_page' => '-1',
+);
+
+$query = new WP_Query( $args );
+
+if ( $query->have_posts() ) {
+?>
         <div class="grid-item item-s-12 item-m-3 item-m-3">
-          PAGES
+          <div class="margin-bottom-small">&nbsp;</div>
+<?php
+	while ( $query->have_posts() ) {
+		$query->the_post();
+?>
+          <h2 class="font-size-large margin-bottom-small"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+<?php
+  }
+?>
         </div>
+<?php
+}
+?>
       </div>
     </div>
   </section>
