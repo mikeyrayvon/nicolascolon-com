@@ -24,7 +24,7 @@ if ( $query->have_posts() ) {
   $current_year = 0;
 
 ?>
-        <div class="grid-item item-s-12 item-m-9">
+        <ul id="exhibition-list" class="grid-item item-s-12 item-m-9">
 <?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
@@ -34,16 +34,19 @@ if ( $query->have_posts() ) {
 
     if ($year !== $current_year) {
       $current_year = $year;
-      echo '<div class="margin-bottom-small">' . $current_year . '</div>';
+?>
+          <li>
+            <div class="margin-bottom-small"><?php echo $year; ?></div>
+<?php
     }
 ?>
-          <h2 <?php post_class('margin-bottom-small font-size-large'); ?> id="post-<?php the_ID(); ?>">
-            <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-          </h2>
+            <h2 <?php post_class('margin-bottom-small font-size-large'); ?> id="post-<?php the_ID(); ?>">
+              <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+            </h2>
 <?php
   }
 ?>
-      </div>
+        </ul>
 <?php
 }
 
@@ -51,6 +54,9 @@ if ( $query->have_posts() ) {
 wp_reset_postdata();
 ?>
 
+        <div class="grid-item item-s-12 item-m-3 item-m-3">
+          PAGES
+        </div>
       </div>
     </div>
   </section>
