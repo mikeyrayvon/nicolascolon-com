@@ -617,6 +617,34 @@ template {
   border-style: dashed;
 }
 @font-face {
+  font-family: 'Freight';
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/Freight-TextBook.eot");
+  src: local("Freight"), url("fonts/Freight-TextBook.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBook.woff2") format("woff2"), url("fonts/Freight-TextBook.woff") format("woff"), url("fonts/Freight-TextBook.ttf") format("truetype"), url("fonts/Freight-TextBook.svg#Freight") format("svg");
+}
+@font-face {
+  font-family: 'Freight';
+  font-weight: normal;
+  font-style: italic;
+  src: url("fonts/Freight-TextBookItalic.eot");
+  src: local("Freight"), url("fonts/Freight-TextBookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBookItalic.woff2") format("woff2"), url("fonts/Freight-TextBookItalic.woff") format("woff"), url("fonts/Freight-TextBookItalic.ttf") format("truetype"), url("fonts/Freight-TextBookItalic.svg#Freight") format("svg");
+}
+@font-face {
+  font-family: 'Freight';
+  font-weight: bold;
+  font-style: normal;
+  src: url("fonts/Freight-TextBook.eot");
+  src: local("Freight"), url("fonts/Freight-TextBook.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBook.woff2") format("woff2"), url("fonts/Freight-TextBook.woff") format("woff"), url("fonts/Freight-TextBook.ttf") format("truetype"), url("fonts/Freight-TextBook.svg#Freight") format("svg");
+}
+@font-face {
+  font-family: 'Freight';
+  font-weight: bold;
+  font-style: italic;
+  src: url("fonts/Freight-TextBookItalic.eot");
+  src: local("Freight"), url("fonts/Freight-TextBookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/Freight-TextBookItalic.woff2") format("woff2"), url("fonts/Freight-TextBookItalic.woff") format("woff"), url("fonts/Freight-TextBookItalic.ttf") format("truetype"), url("fonts/Freight-TextBookItalic.svg#Freight") format("svg");
+}
+@font-face {
   font-family: 'fontello';
   src: url("fontello.eot");
   font-weight: normal;
@@ -695,7 +723,7 @@ template {
   content: '\e80c';
 }
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Freight', Georgia, Times, "Times New Roman", serif;
   letter-spacing: 0.001em;
 }
 body {
@@ -716,7 +744,7 @@ p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .font-serif {
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: 'Freight', Georgia, Times, "Times New Roman", serif;
 }
 .font-larger {
   font-size: 1.3rem;
@@ -1594,10 +1622,10 @@ html,
   }
   html,
   .font-size-basic {
-    font-size: 24px;
+    font-size: 22px;
   }
   .font-size-large {
-    font-size: 36px;
+    font-size: 34px;
   }
   .desktop-only {
     display: initial !important;
@@ -1622,6 +1650,13 @@ html,
 @media screen and (min-width: 1280px) {
   .container {
     width: 1200px;
+  }
+  html,
+  .font-size-basic {
+    font-size: 24px;
+  }
+  .font-size-large {
+    font-size: 36px;
   }
 }
 @media screen and (min-width: 1366px) {

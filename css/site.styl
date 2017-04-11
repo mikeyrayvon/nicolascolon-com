@@ -124,8 +124,8 @@ font-sizes($font-size-basic, false, $font-size-large)
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
 
-  $font-size-basic = 24px
-  $font-size-large = 36px
+  $font-size-basic = 22px
+  $font-size-large = 34px
 
   grid(1000px, $gutter, l)
 
@@ -140,7 +140,12 @@ font-sizes($font-size-basic, false, $font-size-large)
 
 @media screen and (min-width: 1280px)
 
+  $font-size-basic = 24px
+  $font-size-large = 36px
+
   grid(1200px)
+
+  font-sizes($font-size-basic, false, $font-size-large)
 
 @media screen and (min-width: 1366px)
 
