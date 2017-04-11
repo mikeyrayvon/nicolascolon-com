@@ -1323,6 +1323,14 @@ html,
     -moz-column-gap: 42px;
     column-gap: 42px;
   }
+  #exhibition-content {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 42px;
+    -moz-column-gap: 42px;
+    column-gap: 42px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -1590,6 +1598,14 @@ html,
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
+    -webkit-column-gap: 48px;
+    -moz-column-gap: 48px;
+    column-gap: 48px;
+  }
+  #exhibition-content {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
     -webkit-column-gap: 48px;
     -moz-column-gap: 48px;
     column-gap: 48px;
