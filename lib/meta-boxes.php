@@ -39,5 +39,26 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+   $exhibition_meta = new_cmb2_box( array(
+ 		'id'            => $prefix . 'exhibition_metabox',
+ 		'title'         => esc_html__( 'Exhibition Details', 'cmb2' ),
+ 		'object_types'  => array( 'Exhibition', ), // Post type
+ 	) );
+
+  $exhibition_meta->add_field( array(
+		'name' => esc_html__( 'Open Date', 'cmb2' ),
+		'id'   => $prefix . 'date_open',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+	) );
+
+  $exhibition_meta->add_field( array(
+		'name' => esc_html__( 'Close Date', 'cmb2' ),
+		'id'   => $prefix . 'date_close',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+	) );
+
+
 }
 ?>
