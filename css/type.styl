@@ -2,8 +2,13 @@
 
 // declare font families here
 
+font-face('Freight', 'fonts/Freight-TextBook', normal, normal);
+font-face('Freight', 'fonts/Freight-TextBookItalic', normal, italic);
+font-face('Freight', 'fonts/Freight-TextBook', bold, normal);
+font-face('Freight', 'fonts/Freight-TextBookItalic', bold, italic);
+
 $font-sans = font-stack('Helvetica');
-$font-serif = font-stack('Georgia');
+$font-serif = 'Freight', font-stack('Georgia');
 
 // ******************************************************
 
@@ -36,7 +41,7 @@ $font-tracking-wider = .05em
 // TYPOGRAPHY
 
 html
-  font-family: $font-sans
+  font-family: $font-serif
   letter-spacing: $font-tracking-basic
 
 body
