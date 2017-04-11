@@ -42,7 +42,7 @@ function igv_cmb_metaboxes() {
    $exhibition_meta = new_cmb2_box( array(
  		'id'            => $prefix . 'exhibition_metabox',
  		'title'         => esc_html__( 'Exhibition Details', 'cmb2' ),
- 		'object_types'  => array( 'Exhibition', ), // Post type
+ 		'object_types'  => array( 'exhibition', ), // Post type
  	) );
 
   $exhibition_meta->add_field( array(
