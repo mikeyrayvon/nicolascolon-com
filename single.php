@@ -22,7 +22,7 @@ if( have_posts() ) {
             <h1 class="font-size-large margin-bottom-basic"><?php the_title(); ?></h1>
           </div>
 
-          <div id="exhibition-content" class="grid-item item-s-12 item-m-8">
+          <div id="exhibition-content" class="grid-item item-s-12 item-l-8">
 
             <p>
               <?php echo !empty($venue) ? $venue . '<br>' : ''; ?>
@@ -35,7 +35,7 @@ if( have_posts() ) {
             <?php the_content(); ?>
 
           </div>
-          
+
 <?php
       if (!empty($documentation)) {
 ?>
