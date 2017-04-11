@@ -3,9 +3,9 @@
 // declare font families here
 
 font-face('Freight', 'fonts/Freight-TextBook', normal, normal);
-font-face('Freight', 'fonts/Freight-TextBookItalic', normal, italic);
-font-face('Freight', 'fonts/Freight-TextBook', bold, normal);
-font-face('Freight', 'fonts/Freight-TextBookItalic', bold, italic);
+font-face('Freight-Italic', 'fonts/Freight-TextBookItalic', normal, italic);
+font-face('Freight-Bold', 'fonts/Freight-TextBold', bold, normal);
+font-face('Freight-BoldItalic', 'fonts/Freight-TextBoldItalic', bold, italic);
 
 $font-sans = font-stack('Helvetica');
 $font-serif = 'Freight', font-stack('Georgia');
@@ -66,9 +66,14 @@ p
 
 em, .font-italic
   font-style: italic
+  font-family: 'Freight-Italic', font-stack('Georgia');
 
 strong, .font-bold
   font-weight: bold
+  font-family: 'Freight-Bold', font-stack('Georgia');
+
+em strong, strong em
+  font-family: 'Freight-BoldItalic', font-stack('Georgia');
 
 .font-small-caps
   text-transform: uppercase
