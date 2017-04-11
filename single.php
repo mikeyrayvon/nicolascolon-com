@@ -14,7 +14,7 @@ if( have_posts() ) {
     $venue = get_post_meta($post->ID, '_igv_venue', true);
     $open = get_post_meta($post->ID, '_igv_date_open', true);
     $close = get_post_meta($post->ID, '_igv_date_close', true);
-    $format = 'j M Y';
+    $format = 'j F Y';
     $documentation = get_post_meta($post->ID, '_igv_documentation', true);
 ?>
         <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
