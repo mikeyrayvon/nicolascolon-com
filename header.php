@@ -27,6 +27,10 @@
 
 <section id="main-container">
 
-  <header id="header">
-    <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="container">
+    <div class="grid-row margin-top-small margin-bottom-small">
+      <div class="grid-item item-s-12">
+        <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+      </div>
+    </div>
   </header>
