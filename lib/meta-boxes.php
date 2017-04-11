@@ -48,15 +48,13 @@ function igv_cmb_metaboxes() {
   $exhibition_meta->add_field( array(
 		'name' => esc_html__( 'Open Date', 'cmb2' ),
 		'id'   => $prefix . 'date_open',
-		'type' => 'text_date',
-		// 'date_format' => 'Y-m-d',
+		'type' => 'text_date_timestamp',
 	) );
 
   $exhibition_meta->add_field( array(
 		'name' => esc_html__( 'Close Date', 'cmb2' ),
 		'id'   => $prefix . 'date_close',
-		'type' => 'text_date',
-		// 'date_format' => 'Y-m-d',
+		'type' => 'text_date_timestamp',
 	) );
 
 
