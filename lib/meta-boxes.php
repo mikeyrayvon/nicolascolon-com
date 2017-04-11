@@ -46,6 +46,12 @@ function igv_cmb_metaboxes() {
  	) );
 
   $exhibition_meta->add_field( array(
+		'name' => esc_html__( 'Venue', 'cmb2' ),
+		'id'   => $prefix . 'venue',
+		'type' => 'text',
+	) );
+
+  $exhibition_meta->add_field( array(
 		'name' => esc_html__( 'Open Date', 'cmb2' ),
 		'id'   => $prefix . 'date_open',
 		'type' => 'text_date_timestamp',
@@ -56,6 +62,18 @@ function igv_cmb_metaboxes() {
 		'id'   => $prefix . 'date_close',
 		'type' => 'text_date_timestamp',
 	) );
+
+  $exhibition_docu_meta = new_cmb2_box( array(
+   'id'            => $prefix . 'exhibition_docu_metabox',
+   'title'         => esc_html__( 'Exhibition Documentation', 'cmb2' ),
+   'object_types'  => array( 'exhibition', ), // Post type
+ ) );
+
+ $exhibition_docu_meta->add_field( array(
+   'id'      => $prefix . 'documentation',
+   'type'    => 'wysiwyg',
+   'options' => array( 'textarea_rows' => 15, ),
+ ) );
 
 
 }
