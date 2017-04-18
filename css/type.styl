@@ -30,7 +30,7 @@ $font-serif = 'Freight', font-stack('Georgia');
 $font-size-larger = 1.3rem
 
 $font-leading-basic = 1.35
-$font-leading-tighter = 1.15
+$font-leading-tighter = 1.2
 $font-leading-larger = 1.45
 
 $font-tracking-basic = .001em
@@ -49,6 +49,10 @@ body
 
 h1,h2,h3,h4,h5,h6
   margin: 0
+
+h3
+  font-family: $font-sans
+  margin: .5rem 0
 
 p
   margin-bottom: 1rem
@@ -84,6 +88,9 @@ em strong, strong em
 
 .font-uppercase
   text-transform: uppercase
+
+.font-leading-tighter
+  line-height: $font-leading-tighter
 
 // TEXT RULES
 
