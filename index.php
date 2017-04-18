@@ -37,7 +37,7 @@ if ( $query->have_posts() ) {
 <?php
     }
 ?>
-            <h2 <?php post_class('margin-bottom-tiny font-size-large font-leading-tighter'); ?> id="post-<?php the_ID(); ?>">
+            <h2 <?php post_class('margin-bottom-small font-size-large font-leading-tighter'); ?> id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </h2>
 <?php
