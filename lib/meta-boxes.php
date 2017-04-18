@@ -52,6 +52,12 @@ function igv_cmb_metaboxes() {
 	) );
 
   $exhibition_meta->add_field( array(
+		'name' => esc_html__( 'Venue Link', 'cmb2' ),
+		'id'   => $prefix . 'venue_link',
+		'type' => 'text_url',
+	) );
+
+  $exhibition_meta->add_field( array(
 		'name' => esc_html__( 'Open Date', 'cmb2' ),
 		'id'   => $prefix . 'date_open',
 		'type' => 'text_date_timestamp',
