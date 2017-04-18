@@ -12,6 +12,7 @@ if( have_posts() ) {
     the_post();
 
     $venue = get_post_meta($post->ID, '_igv_venue', true);
+    $venue_link = get_post_meta($post->ID, '_igv_venue_link', true);
     $open = get_post_meta($post->ID, '_igv_date_open', true);
     $close = get_post_meta($post->ID, '_igv_date_close', true);
     $format = 'j F Y';
@@ -25,8 +26,10 @@ if( have_posts() ) {
           <div id="exhibition-content" class="grid-item item-s-12 margin-bottom-basic">
 
             <p>
-              <?php echo !empty($venue) ? $venue . '<br>' : ''; ?>
               <?php
+                echo !empty($venue_link) ? '<a href="' . esc_url($venue_link) . '">' : '';
+                echo !empty($venue) ? $venue . '<br>' : '';
+                echo !empty($venue_link) ? '</a>' : '';
                 echo !empty($open) ? date($format, $open) : '';
                 echo !empty($close) ? ' — ' . date($format, $close) : '';
               ?>
