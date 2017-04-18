@@ -21,7 +21,7 @@ if ( $query->have_posts() ) {
   $current_year = 0;
 
 ?>
-        <ul id="exhibition-list" class="grid-item item-s-12 item-m-9 margin-bottom-basic">
+        <ul id="exhibition-list" class="grid-item item-s-12 item-m-9 margin-bottom-small">
 <?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
@@ -32,12 +32,12 @@ if ( $query->have_posts() ) {
     if ($year !== $current_year) {
       $current_year = $year;
 ?>
-          <li class="margin-bottom-basic">
-            <div class="margin-bottom-small font-sans"><?php echo $year; ?></div>
+          <li class="margin-bottom-small">
+            <div class="margin-bottom-tiny font-sans"><?php echo $year; ?></div>
 <?php
     }
 ?>
-            <h2 <?php post_class('margin-bottom-small font-size-large'); ?> id="post-<?php the_ID(); ?>">
+            <h2 <?php post_class('margin-bottom-tiny font-size-large font-leading-tighter'); ?> id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </h2>
 <?php
@@ -59,12 +59,12 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ) {
 ?>
         <div class="grid-item item-s-12 item-m-3 item-m-3">
-          <div class="margin-bottom-small">&nbsp;</div>
+          <div class="margin-bottom-tiny">&nbsp;</div>
 <?php
 	while ( $query->have_posts() ) {
 		$query->the_post();
 ?>
-          <h2 class="font-size-large margin-bottom-small"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <h2 class="font-size-large margin-bottom-tiny font-leading-tighter"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 <?php
   }
 ?>
