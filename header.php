@@ -22,16 +22,6 @@
   <?php } ?>
   <?php wp_head(); ?>
 
-  <?php
-  $expo_types = get_the_terms($post->ID, 'exhibition_type');
-  if (!empty($expo_types)) {
-    $types_list = '';
-    foreach ($expo_types as $type) {
-      $abbr = get_term_meta($type->term_id, '_igv_type_abbr', true);
-      $types_list .= $abbr . ', ';
-    }
-  }
-  ?>
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
@@ -49,11 +39,6 @@
 ?>
       <div class="grid-item item-s-6 text-align-right">
         <h1 class="font-size-large u-inline-block"><?php the_title(); ?></h1>
-        <?php
-          if (!empty($expo_types)) {
-            echo ' <span class="u-inline-block font-size-basic font-sans">(' . rtrim($types_list, ', ') . ')</span>';
-          }
-        ?>
       </div>
 <?php
   }

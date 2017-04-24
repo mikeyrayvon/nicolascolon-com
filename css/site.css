@@ -1104,6 +1104,9 @@ html,
 .font-size-large {
   font-size: 24px;
 }
+.font-size-small {
+  font-size: 12px;
+}
 @media screen and (min-width: 720px) {
   .margin-top-micro {
     margin-top: 7px;
@@ -1369,6 +1372,9 @@ html,
   }
   .font-size-large {
     font-size: 28px;
+  }
+  .font-size-small {
+    font-size: 14px;
   }
   .mobile-only {
     display: none !important;
@@ -1656,6 +1662,9 @@ html,
   .font-size-large {
     font-size: 34px;
   }
+  .font-size-small {
+    font-size: 18px;
+  }
   .desktop-only {
     display: initial !important;
   }
@@ -1686,6 +1695,9 @@ html,
   }
   .font-size-large {
     font-size: 36px;
+  }
+  .font-size-small {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1366px) {

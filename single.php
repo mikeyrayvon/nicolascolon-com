@@ -17,6 +17,14 @@ if( have_posts() ) {
     $close = get_post_meta($post->ID, '_igv_date_close', true);
     $format = 'j F Y';
     $documentation = get_post_meta($post->ID, '_igv_documentation', true);
+
+    $expo_types = get_the_terms($post->ID, 'exhibition_type');
+    if (!empty($expo_types)) {
+      $types_list = '';
+      foreach ($expo_types as $type) {
+        $types_list .= $type->name . ', ';
+      }
+    }
 ?>
         <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
           <div id="exhibition-details" class="grid-item item-s-12 margin-bottom-small">
@@ -27,6 +35,11 @@ if( have_posts() ) {
                 echo !empty($venue_link) ? '</a>' : '';
                 echo !empty($open) ? date($format, $open) : '';
                 echo !empty($close) ? ' — ' . date($format, $close) : '';
+              ?>
+              <?php
+                if (!empty($expo_types)) {
+                  echo '<br><span class="font-size-small font-sans">(' . rtrim($types_list, ', ') . ')</span>';
+                }
               ?>
             </p>
           </div>
