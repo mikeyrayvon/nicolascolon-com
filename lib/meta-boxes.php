@@ -81,6 +81,20 @@ function igv_cmb_metaboxes() {
    'options' => array( 'textarea_rows' => 15, ),
  ) );
 
+ $type_meta = new_cmb2_box( array(
+   'id'               => $prefix . 'type_meta',
+   'title'            => esc_html__( 'Type Options', 'cmb2' ), // Doesn't output for term boxes
+   'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta
+   'taxonomies'       => array( 'exhibition_type',), // Tells CMB2 which taxonomies should have these fields
+   'new_term_section' => true, // Will display in the "Add New Category" section
+ ) );
+
+ $type_meta->add_field( array(
+   'name' => esc_html__( 'Abbreviation', 'cmb2' ),
+   'id'   => $prefix . 'type_abbr',
+   'type' => 'text',
+ ) );
+
 
 }
 ?>

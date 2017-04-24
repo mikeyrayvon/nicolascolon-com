@@ -20,6 +20,7 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ) {
   $current_year = 0;
 
+  $types = get_terms('exhibition_type');
 ?>
         <ul id="exhibition-list" class="grid-item item-s-12 item-m-9 margin-bottom-small">
 <?php
@@ -28,6 +29,8 @@ if ( $query->have_posts() ) {
 
     $open = get_post_meta($post->ID, '_igv_date_open', true);
     $year = date('Y', $open);
+
+    $expo_types = get_the_terms($post->ID, 'exhibition_type');
 
     if ($year !== $current_year) {
       $current_year = $year;
@@ -39,6 +42,22 @@ if ( $query->have_posts() ) {
 ?>
             <h2 <?php post_class('margin-bottom-small font-size-large font-leading-tighter'); ?> id="post-<?php the_ID(); ?>">
               <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+<?php
+    if (!empty($expo_types)) {
+?>
+              <span class="u-inline-block font-size-basic font-sans">
+<?php
+      $types_list = '';
+      foreach ($expo_types as $type) {
+        $abbr = get_term_meta($type->term_id, '_igv_type_abbr', true);
+        $types_list .= $abbr . ', ';
+      }
+?>
+                (<?php echo (rtrim($types_list, ', ')); ?>)</span>
+
+<?php
+    }
+?>
             </h2>
 <?php
   }
@@ -61,6 +80,21 @@ if ( $query->have_posts() ) {
         <div class="grid-item item-s-12 item-m-3 item-m-3">
           <div class="margin-bottom-tiny">&nbsp;</div>
 <?php
+  if (!empty($types)) {
+?>
+        <ul id="exhibition-type-key" class="margin-bottom-small font-sans list-style-none">
+<?php
+    foreach ($types as $type) {
+      $abbr = get_term_meta($type->term_id, '_igv_type_abbr', true);
+?>
+          <li>(<?php echo ($abbr); ?>) <?php echo $type->name; ?></li>
+<?php
+    }
+?>
+        </ul>
+<?php
+  }
+
 	while ( $query->have_posts() ) {
 		$query->the_post();
 ?>

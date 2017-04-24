@@ -19,12 +19,7 @@ if( have_posts() ) {
     $documentation = get_post_meta($post->ID, '_igv_documentation', true);
 ?>
         <article <?php post_class('grid-row'); ?> id="post-<?php the_ID(); ?>">
-          <div class="grid-item item-s-12">
-            <h1 class="font-size-large margin-bottom-basic"><?php the_title(); ?></h1>
-          </div>
-
-          <div id="exhibition-content" class="grid-item item-s-12 margin-bottom-basic">
-
+          <div id="exhibition-details" class="grid-item item-s-12 margin-bottom-small">
             <p>
               <?php
                 echo !empty($venue_link) ? '<a href="' . esc_url($venue_link) . '">' : '';
@@ -34,9 +29,10 @@ if( have_posts() ) {
                 echo !empty($close) ? ' — ' . date($format, $close) : '';
               ?>
             </p>
+          </div>
 
+          <div id="exhibition-content" class="grid-item item-s-12 margin-bottom-basic">
             <?php the_content(); ?>
-
           </div>
 
 <?php

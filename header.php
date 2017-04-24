@@ -21,16 +21,42 @@
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <?php } ?>
   <?php wp_head(); ?>
+
+  <?php
+  $expo_types = get_the_terms($post->ID, 'exhibition_type');
+  if (!empty($expo_types)) {
+    $types_list = '';
+    foreach ($expo_types as $type) {
+      $abbr = get_term_meta($type->term_id, '_igv_type_abbr', true);
+      $types_list .= $abbr . ', ';
+    }
+  }
+  ?>
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
 <section id="main-container">
 
-  <header id="header" class="container">
-    <div class="grid-row margin-top-basic margin-bottom-basic">
-      <div class="grid-item item-s-12">
+  <header id="header" class="container margin-top-basic margin-bottom-basic">
+    <div class="grid-row">
+      <div class="grid-item item-s-6">
         <h1 class="font-size-large"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
       </div>
+
+<?php
+  if (is_single()) {
+?>
+      <div class="grid-item item-s-6 text-align-right">
+        <h1 class="font-size-large u-inline-block"><?php the_title(); ?></h1>
+        <?php
+          if (!empty($expo_types)) {
+            echo ' <span class="u-inline-block font-size-basic font-sans">(' . rtrim($types_list, ', ') . ')</span>';
+          }
+        ?>
+      </div>
+<?php
+  }
+?>
     </div>
   </header>
