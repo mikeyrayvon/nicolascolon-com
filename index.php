@@ -45,7 +45,7 @@ if ( $query->have_posts() ) {
 <?php
     if (!empty($expo_types)) {
 ?>
-              <span class="u-inline-block font-size-basic font-sans">
+              <span class="u-inline-block font-size-small font-sans">
 <?php
       $types_list = '';
       foreach ($expo_types as $type) {
@@ -82,7 +82,7 @@ if ( $query->have_posts() ) {
 <?php
   if (!empty($types)) {
 ?>
-        <ul id="exhibition-type-key" class="margin-bottom-small font-sans list-style-none">
+        <ul id="exhibition-type-key" class="margin-bottom-small font-sans list-style-none font-size-small">
 <?php
     foreach ($types as $type) {
       $abbr = get_term_meta($type->term_id, '_igv_type_abbr', true);
